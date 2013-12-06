@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Type Anywhere !</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Loading Bootstrap -->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Loading Flat UI -->
+    <link href="css/flat-ui.css" rel="stylesheet">
+    <link href="css/demo.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="images/r.png">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="demo-headline large-margin-top">
+        <h1 class="demo-logo">
+          Type Anywhere !
+        </h1>
+        <h4>Start typing anywhere on this page</h4>
+        <h6><a href="http://designmodo.github.io/Flat-UI/">Designed with Flat-UI</a></h6>
+      </div> <!-- /demo-headline -->
+
+      <div class="hidden overlay" id="overlay">
+        <div class="container low-margin-top">
+          <h2 class="align-center">Type search here !</h2>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <input type="text" value="" name="search-input" onchange="change_content_display()" class="form-control" id="search-input"/>
+                <div id="search-select">
+                  <p class="btn btn-block btn-lg btn-default" id="display-a-0">
+                    <span class="fui-search"></span> Search '<span class="display-span"></span>'' on Google
+                  </p>
+                  <p class="btn btn-block btn-lg btn-default" id="display-a-1">
+                    <span class="fui-search"></span> Search '<span class="display-span"></span>'' on Wikipedia
+                  </p>
+                  <p class="btn btn-block btn-lg btn-default" id="display-a-2">
+                    <span class="fui-search"></span> Search '<span class="display-span"></span>'' on GitHub
+                  </p>
+                  <p class="btn btn-block btn-lg btn-default" id="display-a-3">
+                    <span class="fui-search"></span> Search '<span class="display-span"></span>'' on Youtube
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h4 class="align-center">Press 'ESC' to leave or 'ENTER' to search</h4>
+        </div>
+      </div>
+    </div>
+
+    <!-- Load JS here for greater good =============================-->
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="js/jquery.ui.touch-punch.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-select.js"></script>
+    <script src="js/bootstrap-switch.js"></script>
+    <script src="js/flatui-checkbox.js"></script>
+    <script src="js/flatui-radio.js"></script>
+    <script src="js/jquery.tagsinput.js"></script>
+    <script src="js/jquery.placeholder.js"></script>
+    <script src="js/jquery.stacktable.js"></script>
+    <script src="http://vjs.zencdn.net/4.1/video.js"></script>
+    <script src="js/application.js"></script>
+  </body>
+</html>
