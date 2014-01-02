@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <title>Type Anywhere !</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Easy search module powered by the powerness of Javascript">
+    <link rel="author" href="https://plus.google.com/u/0/110592770316565776182/posts?partnerid=gplp0"/>
 
     <!-- Loading Bootstrap -->
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -21,7 +23,29 @@
     <![endif]-->
   </head>
   <body>
-    <div class="container">
+    <div id="fb-root"></div>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '175480269204184',                    // App ID from the app dashboard
+          status     : true,                                 // Check Facebook Login status
+          xfbml      : true                                  // Look for social plugins on the page
+        });
+      };
+
+      (function(){
+         if (document.getElementById('facebook-jssdk')) {return;}
+
+         var firstScriptElement = document.getElementsByTagName('script')[0];
+
+         var facebookJS = document.createElement('script');
+         facebookJS.id = 'facebook-jssdk';
+         facebookJS.src = '//connect.facebook.net/en_US/all.js';
+
+         firstScriptElement.parentNode.insertBefore(facebookJS, firstScriptElement);
+       }());
+    </script>
+    <div class="container" ng-app="">
       <div class="demo-headline large-margin-top">
         <h1 class="demo-logo">
           Type Anywhere !
@@ -36,19 +60,19 @@
           <div class="row">
             <div class="col-md-12">
               <div class="form-group">
-                <input type="text" value="" name="search-input" onchange="change_content_display()" class="form-control" id="search-input"/>
+                <input type="text" value="" name="search-input" ng-model="data.search" class="form-control" id="search-input"/>
                 <div id="search-select">
                   <p class="btn btn-block btn-lg btn-default" id="display-a-0">
-                    <span class="fui-search"></span> Search '<span class="display-span"></span>'' on Google
+                    <span class="fui-search"></span> Search ' {{data.search}} ' on Google
                   </p>
                   <p class="btn btn-block btn-lg btn-default" id="display-a-1">
-                    <span class="fui-search"></span> Search '<span class="display-span"></span>'' on Wikipedia
+                    <span class="fui-search"></span> Search ' {{data.search}} ' on Wikipedia
                   </p>
                   <p class="btn btn-block btn-lg btn-default" id="display-a-2">
-                    <span class="fui-search"></span> Search '<span class="display-span"></span>'' on GitHub
+                    <span class="fui-search"></span> Search ' {{data.search}} ' on GitHub
                   </p>
                   <p class="btn btn-block btn-lg btn-default" id="display-a-3">
-                    <span class="fui-search"></span> Search '<span class="display-span"></span>'' on Youtube
+                    <span class="fui-search"></span> Search ' {{data.search}} ' on Youtube
                   </p>
                 </div>
               </div>
@@ -60,18 +84,10 @@
     </div>
 
     <!-- Load JS here for greater good =============================-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
     <script src="js/jquery-1.8.3.min.js"></script>
     <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
-    <script src="js/jquery.ui.touch-punch.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/bootstrap-select.js"></script>
-    <script src="js/bootstrap-switch.js"></script>
-    <script src="js/flatui-checkbox.js"></script>
-    <script src="js/flatui-radio.js"></script>
-    <script src="js/jquery.tagsinput.js"></script>
-    <script src="js/jquery.placeholder.js"></script>
-    <script src="js/jquery.stacktable.js"></script>
-    <script src="http://vjs.zencdn.net/4.1/video.js"></script>
     <script src="js/application.js"></script>
   </body>
 </html>

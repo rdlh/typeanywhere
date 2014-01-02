@@ -11,7 +11,6 @@
       $( "#search-select" ).removeClass( "hidden" );
       can_search = 1;
     }
-    $( ".display-span" ).html($( "#search-input" ).val());
   });
 
   $(document).keydown(function(e){
