@@ -17,6 +17,13 @@
 
     <link rel="shortcut icon" href="images/r.png">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
+    <script src="http://rawgithub.com/Ciul/angular-facebook/master/lib/angular-facebook.js"></script>
+    <script src="script.js"></script>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="js/application.js"></script>
+
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
     <!--[if lt IE 9]>
       <script src="js/html5shiv.js"></script>
@@ -25,34 +32,49 @@
   <body>
     <div id="fb-root"></div>
     <script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId      : '175480269204184',                    // App ID from the app dashboard
-          status     : true,                                 // Check Facebook Login status
-          xfbml      : true                                  // Look for social plugins on the page
-        });
-      };
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '175480269204184',                    // App ID from the app dashboard
+        status     : true,                                 // Check Facebook Login status
+        xfbml      : true                                  // Look for social plugins on the page
+      });
+    };
 
-      (function(){
-         if (document.getElementById('facebook-jssdk')) {return;}
+    (function(){
+      if (document.getElementById('facebook-jssdk')) {return;}
 
-         var firstScriptElement = document.getElementsByTagName('script')[0];
+      var firstScriptElement = document.getElementsByTagName('script')[0];
 
-         var facebookJS = document.createElement('script');
-         facebookJS.id = 'facebook-jssdk';
-         facebookJS.src = '//connect.facebook.net/en_US/all.js';
+      var facebookJS = document.createElement('script');
+      facebookJS.id = 'facebook-jssdk';
+      facebookJS.src = 'http://connect.facebook.net/en_US/all.js';
 
-         firstScriptElement.parentNode.insertBefore(facebookJS, firstScriptElement);
-       }());
+      firstScriptElement.parentNode.insertBefore(facebookJS, firstScriptElement);
+    }());
     </script>
     <div class="container" ng-app="">
-      <div class="demo-headline large-margin-top">
+      <div class="demo-headline">
         <h1 class="demo-logo">
           Type Anywhere !
         </h1>
         <h4>Start typing anywhere on this page</h4>
         <h6><a href="http://designmodo.github.io/Flat-UI/">Designed with Flat-UI</a></h6>
       </div> <!-- /demo-headline -->
+
+      <div class="demo-headline">
+        <div class="col-md-4">
+          <h3>Facebook</h3>
+          <button class="btn btn-primary btn-large btn-block" data-ng-show="!logged" data-ng-click="IntentLogin()">Login</button>
+        </div>
+        <div class="col-md-4">
+          <h3>Twitter</h3>
+          <button class="btn btn-primary btn-large btn-block" id="tw-login">Login</button>
+        </div>
+        <div class="col-md-4">
+          <h3>GitHub</h3>
+          <button class="btn btn-primary btn-large btn-block" id="gh-login">Login</button>
+        </div>
+      </div>
 
       <div class="hidden overlay" id="overlay">
         <div class="container low-margin-top">
@@ -82,12 +104,5 @@
         </div>
       </div>
     </div>
-
-    <!-- Load JS here for greater good =============================-->
-
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
-    <script src="js/jquery-1.8.3.min.js"></script>
-    <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
-    <script src="js/application.js"></script>
   </body>
 </html>
